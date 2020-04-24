@@ -1,14 +1,21 @@
-var ipapi = require('./lib/ip-api');
-module.exports.getDomainOrIPDetails = function(domainOrip,reponseType,callback) {
- ipapi.fireRequest(domainOrip,reponseType,function(err,result){
+const ipapi = require('./lib/ip-api');
 
- 	if(err)
- 	{
-       callback(err,null);
- 	}else
- 	{
-       callback(null,result);
- 	}
+module.exports.getDomainOrIPDetails = function(domainOrIp, reponseType, callback) {
+	let promise;
+	if (!callback) {
+		promise = new Promise(function(resolve, reject) {
+			callback = function(err, res, quota) {
+				err ? reject(err) : resolve({
+					data: res,
+					quota: quota
+				});
+			};
+		});
+	}
 
- });
+	ipapi.fireRequest(domainOrIp, reponseType, function(err, result, quota) {
+		callback(err, result, quota);
+	});
+
+	return promise;
 };
