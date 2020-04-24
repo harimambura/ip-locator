@@ -27,10 +27,32 @@ Usage
 ```js
 var ipLocator = require('ip-locator')
 
-ipLocator.getDomainOrIPDetails(<IpOrhostname>,<ResponseType>, function (err, data) {
-  console.log(data)
+ipLocator.getDomainOrIPDetails(IpOrhostnameString, ResponseTypeString, function (err, data, quota) {
+	console.log(data);
+	console.log(quota);
 });
+
+ipLocator.getDomainOrIPDetails(IpOrhostnameString, ResponseTypeString)
+	.then(function(result) {
+		console.log(result.data);
+		console.log(result.quota);
+	})
+	.catch(function(error) {
+		console.log(error);
+	});
+
+const result = await ipLocator.getDomainOrIPDetails(IpOrhostnameString, ResponseTypeString);
 ```
+
+Quota
+---------
+```js
+{
+	secondsToReset, // how many secons until remaining requests count will be reset
+	requestsRemaining // how many requests can be sent
+};
+```
+
 Response Types
 ---------
 
