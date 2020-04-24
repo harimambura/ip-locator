@@ -1,43 +1,43 @@
 {
-  "name": "ip-locator",
-  "homepage": "https://github.com/shahid28/ip-locator",
+  "name": "ip-locator-ex",
+  "homepage": "https://github.com/harimambura/ip-locator",
   "keywords": [
     "networking",
-    "name", 
-    "host", 
-    "longitude", 
-    "latitude", 
-    "coordinates", 
-    "location", 
+    "name",
+    "host",
+    "longitude",
+    "latitude",
+    "coordinates",
+    "location",
     "ip",
     "ip-api",
     "ip-api.com",
-    "track", 
-    "lookup", 
-    "coordinate", 
-    "tracker", 
+    "track",
+    "lookup",
+    "coordinate",
+    "tracker",
     "address",
-    "isp", 
-    "database", 
-    "geolocation", 
-    "index", 
+    "isp",
+    "database",
+    "geolocation",
+    "index",
     "network"
   ],
   "author": {
-    "name": "Shahid",
-    "email": "shahid.mca2010@gmail.com"
-  },
+    "name": "harimambura"
+	},
+	"license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shahid28/ip-locator"
+    "url": "https://github.com/harimambura/ip-locator"
   },
   "main": "index.js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
-    "node": "> 0.10"
+    "node": "> 8.0"
   },
   "readmeFilename": "README.md",
   "bugs": {
-    "url": "https://github.com/shahid28/salesforce-oauth2/issues"
+    "url": "https://github.com/harimambura/ip-locator/issues"
   }
- }
+}
